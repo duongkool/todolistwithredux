@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.container {
+  max-width: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  .item-todo {
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    margin-bottom: 10px;
+    .collapse {
+      overflow: hidden;
+      transition: height 0.3s ease, padding 0.3s ease; /* thêm transition cho padding */
+      transform-origin: top;
+      padding: 0; /* bỏ padding mặc định */
+    }
+
+    .collapse.show {
+      padding: 8px;
+      /* thêm padding khi show */
+    }
+
+    .collapse:not(.show) {
+      height: 0;
+      padding: 0; /* bỏ padding khi không show */
+    }
+  }
+
+  h1 {
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+  }
+  .todo-form {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+    button[type="submit"] {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0069d9;
+    }
+  }
+  .infor-todo {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    .todo-text {
+      flex: 1;
+      font-size: 16px;
+    }
+
+    .delete-btn {
+      padding: 5px 10px;
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .delete-btn:hover {
+      background-color: #c82333;
+    }
+  }
+}

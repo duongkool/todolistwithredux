@@ -1,0 +1,39 @@
+.form-container {
+  width: 480px;
+  margin: auto;
+  h3 {
+    text-align: center;
+  }
+  form {
+    padding: 20px;
+    border-radius: 5px;
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    p {
+      margin-top: -5px;
+      border-radius: 4px;
+      color: red;
+    }
+    button[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      & .button[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    }
+  }
+}
