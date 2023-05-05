@@ -7,7 +7,6 @@ export const todoListSlice = createSlice({
   },
   reducers: {
     addNewTodo: (state, action) => {
-      console.log(state.todoList);
       const newList = action.payload;
       return { ...state, todoList: [...state.todoList, newList] };
     },
@@ -39,7 +38,6 @@ export const todoListSlice = createSlice({
     },
     SearchTerm: (state, action) => {
       const searchTeam = action.payload.toLowerCase();
-      console.log(searchTeam);
       if (!searchTeam) {
         return {
           ...state,

@@ -16,19 +16,17 @@ body {
     margin-bottom: 10px;
     .collapse {
       overflow: hidden;
-      transition: height 0.3s ease, padding 0.3s ease; /* thêm transition cho padding */
-      transform-origin: top;
-      padding: 0; /* bỏ padding mặc định */
+      transition: height 0.3s ease, padding 0.3s ease;
+      padding: 0;
     }
 
     .collapse.show {
       padding: 8px;
-      /* thêm padding khi show */
     }
 
     .collapse:not(.show) {
       height: 0;
-      padding: 0; /* bỏ padding khi không show */
+      padding: 0;
     }
   }
 
