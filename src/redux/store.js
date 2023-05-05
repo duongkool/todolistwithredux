@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./slices/counterSlice";
 import todoReducer from "./slices/todoSlice";
 
 const saveTodoListMiddleware = (store) => (next) => (action) => {
@@ -17,7 +16,6 @@ const saveTodoListMiddleware = (store) => (next) => (action) => {
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
     todo: todoReducer,
   },
   middleware: (getDefaultMiddleware) =>
