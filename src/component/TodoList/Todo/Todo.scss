@@ -64,6 +64,13 @@ body {
   .infor-todo {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    span {
+      flex: 70%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 }
 

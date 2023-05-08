@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import { Button, Collapse, Modal } from "react-bootstrap";
-import { removeTodo, editTodo } from "../../../redux/slices/todoSlice";
+import { editTodo } from "../../../redux/slices/todoSlice";
 
 const TodoItem = (props) => {
   const dispatch = useDispatch();
-  const { item } = props;
+  const { item, handleRemoveTodo } = props;
+  // console.log(item);
   const [open, setOpen] = useState(false);
   const [show, setShow] = useState(false);
-  const [openIndex, setOpenIndex] = useState(item.id);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const [openIndex, setOpenIndex] = useState(item.id);
   const formik = useFormik({
     initialValues: {
       id: item.id,
@@ -25,21 +24,25 @@ const TodoItem = (props) => {
       setOpen(false);
     },
   });
+  const handleClose = () => setShow(false);
 
   const handleOpenDetail = (id) => {
-    if (openIndex === id) {
+    if (item.id === id) {
       setOpen(!open);
     }
   };
   const handleRemove = (id) => {
-    dispatch(removeTodo(id));
+    handleRemoveTodo(id);
+    setShow(false);
+    setOpen(false);
   };
   return (
     <>
       <div className="item-todo" key={`todo-${item.id}`}>
         <div className="infor-todo">
           <span>{item.name}</span>
-          <div>
+
+          <div className="container-btn">
             <Button
               className="btn btn-info"
               style={{ marginRight: "10px" }}
