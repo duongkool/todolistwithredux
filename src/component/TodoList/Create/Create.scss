@@ -81,4 +81,15 @@
       }
     }
   }
+  .go-back {
+    background-color: white;
+    border: none;
+    font-size: 20px;
+    &:hover {
+      background-color: #a39e9e33;
+      padding-right: 12px;
+      border-radius: 30px;
+      color: #535356;
+    }
+  }
 }

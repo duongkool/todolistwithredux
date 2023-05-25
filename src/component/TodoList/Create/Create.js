@@ -28,6 +28,10 @@ const Create = () => {
   return (
     <>
       <div className="container">
+        <button className="go-back" onClick={() => navigate("/")}>
+          {" "}
+          &lt; back
+        </button>
         <h1>Todo List</h1>
         <form onSubmit={formik.handleSubmit}>
           <div className="form-group">
